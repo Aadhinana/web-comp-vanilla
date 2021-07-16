@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Web Compoenents</title>
+  </head>
+  <script src="tooltip.js"></script>
+  <body>
+    <h1>Outside component</h1>
+    <my-tooltip helper="Tooltip help!">
+      <!-- This below is inserted into the template where slot is found. -->
+      Hello from HTML
+      <!-- Can have named slots too like this -->
+      <p slot="message">This message is passed in from HTML</p>
+    </my-tooltip>
+    <script></script>
+  </body>
+</html>
