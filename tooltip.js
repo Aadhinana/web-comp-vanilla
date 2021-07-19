@@ -28,6 +28,9 @@ class Tooltip extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
     // this.shadowRoot.querySelector("h3").innerHTML = "Hello";
+    // Get the attribute(s)
+    const attr = this.constructor.ObservedAttributes[0];
+    console.log(this.getAttribute(attr));
   }
 
   // Element is attached from the DOM here
@@ -46,6 +49,11 @@ class Tooltip extends HTMLElement {
   // When attributes change
   attributeChangedCallback(name, oldValue, newValue) {
     console.log(name, oldValue, newValue);
+  }
+
+  // To get all attributes mentioned on the custom ele
+  static get ObservedAttributes() {
+    return ["helper"];
   }
 }
 
