@@ -7,6 +7,7 @@
     <title>Web Compoenents</title>
   </head>
   <script src="tooltip.js"></script>
+  <script src="modal.js"></script>
   <body>
     <h1>Outside component</h1>
     <my-tooltip helper="Tooltip help!" open>
@@ -15,8 +16,35 @@
       <!-- Can have named slots too like this -->
       <p slot="message" id="message">This message is passed in from HTML</p>
     </my-tooltip>
+
+    <hr />
+    <hr />
+
+    <h1>Modal element</h1>
+    <button>Click me to open Modal</button>
+    <my-modal>
+      <h2 slot="header">Header of the modal</h2>
+
+      Hello there
+    </my-modal>
+
     <script>
       const tooltip = document.getElementsByTagName("my-tooltip")[0];
+      const modal = document.getElementsByTagName("my-modal")[0];
+
+      const modalBtn = document.querySelector("button");
+      modalBtn.addEventListener("click", () => {
+        console.log("Open the modal");
+        modal.open();
+      });
+
+      modal.addEventListener("confirm", () => {
+        console.log("modal returned confirm");
+      });
+
+      modal.addEventListener("cancel", () => {
+        console.log("modal returned cancel");
+      });
     </script>
   </body>
 </html>

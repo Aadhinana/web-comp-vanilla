@@ -39,7 +39,7 @@ class Tooltip extends HTMLElement {
     // console.log(this.getAttribute("helper"));
     // Listen to click on element
     this.shadowRoot.addEventListener("click", () => {
-      alert("I got clicked");
+      // alert("I got clicked");
     });
   }
 
