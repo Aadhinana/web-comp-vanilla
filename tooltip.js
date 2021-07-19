@@ -3,6 +3,11 @@ template.innerHTML = `
 <style>
 *{
   color:red;
+  font-size: 2rem;
+}
+// applies to the shadow root if "open" is passed as attribute
+:host([open]) *{
+  color: purple;
 }
 </style>
 <h3>This is from the template and the below is added!</h3>
